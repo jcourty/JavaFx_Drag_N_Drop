@@ -28,8 +28,6 @@ public class DndTextRectangle extends Application {
         DndTextController.manageSourceDragAndDrop(dragText);
         DndTextController.manageTargetDragAndDrop(dropText);
         DndRectangleControler.manageSourceDragAndDrop(rectangle1);
-        DndRectangleControler.manageTargetDragAndDrop(rectangle1);
-        DndRectangleControler.manageSourceDragAndDrop(rectangle2);
         DndRectangleControler.manageTargetDragAndDrop(rectangle2);
         
         

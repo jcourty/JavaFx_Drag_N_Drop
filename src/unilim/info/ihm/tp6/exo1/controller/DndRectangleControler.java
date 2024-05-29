@@ -16,6 +16,7 @@ public class DndRectangleControler {
             public void handle(MouseEvent event) {
             	Dragboard db = source.startDragAndDrop(TransferMode.ANY);
             	ClipboardContent content = new ClipboardContent();
+            	content.putString(source.getFill().toString());
                 db.setContent(content);
                 event.consume();
             }
@@ -35,7 +36,7 @@ public class DndRectangleControler {
     	source.setOnDragOver(new EventHandler<DragEvent>() {
     		public void handle(DragEvent event) {
     			if (event.getGestureSource() != source && event.getDragboard().hasString()) {
-    				event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+    				event.acceptTransferModes(TransferMode.MOVE);
     			}
     			event.consume();
             }
@@ -63,6 +64,10 @@ public class DndRectangleControler {
                  Dragboard db = event.getDragboard();
                  boolean success = false;
                  if (db.hasString()) {
+                     Color droppedColor = Color.valueOf(db.getString());
+                     Color targetColor = (Color) source.getFill();
+                     source.setFill(droppedColor);
+                     ((Rectangle) event.getGestureSource()).setFill(targetColor);
                      success = true;
                  }
                  event.setDropCompleted(success);
