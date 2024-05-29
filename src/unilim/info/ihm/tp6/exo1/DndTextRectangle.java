@@ -29,6 +29,8 @@ public class DndTextRectangle extends Application {
         DndTextController.manageTargetDragAndDrop(dropText);
         DndRectangleControler.manageSourceDragAndDrop(rectangle1);
         DndRectangleControler.manageTargetDragAndDrop(rectangle2);
+        DndRectangleControler.manageSourceDragAndDrop(rectangle2);
+        DndRectangleControler.manageTargetDragAndDrop(rectangle1);
         
         
         Scene scene = new Scene(group, 500, 350);
