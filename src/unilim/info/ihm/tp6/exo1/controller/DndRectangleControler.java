@@ -24,9 +24,7 @@ public class DndRectangleControler {
         
         source.setOnDragDone(new EventHandler<DragEvent>() {
         	public void handle(DragEvent event) {
-        		if (event.getGestureSource() == TransferMode.MOVE) {
-        			source.setFill(Color.TRANSPARENT);
-                }
+    			source.setFill(Color.TRANSPARENT);
                 event.consume();
         		}
         });
